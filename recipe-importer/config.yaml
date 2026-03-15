@@ -1,14 +1,23 @@
 name: Recipe Importer
-version: "1.0"
+version: "1.0.0"
 slug: recipe_importer
-description: Import handwritten recipes using OpenAI
+description: Import handwritten recipe cards using OpenAI
 startup: services
 boot: auto
+init: false
+webui: "http://[HOST]:[PORT:5050]"
+ingress: false
+panel_icon: mdi:chef-hat
 arch:
-  - amd64
   - aarch64
+  - amd64
   - armv7
-ports:
-  8099/tcp: 8099
+  - i386
 map:
   - config:rw
+ports:
+  5050/tcp: 5050
+options:
+  openai_api_key: ""
+schema:
+  openai_api_key: str
