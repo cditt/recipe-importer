@@ -1,0 +1,14 @@
+name: Recipe Importer
+version: "1.0"
+slug: recipe_importer
+description: Import handwritten recipes using OpenAI
+startup: services
+boot: auto
+arch:
+  - amd64
+  - aarch64
+  - armv7
+ports:
+  8099/tcp: 8099
+map:
+  - config:rw
